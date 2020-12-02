@@ -10,7 +10,7 @@ public interface OwnerService {
 
     Owner findById(Long id);
 
-    Owner saver(Owner owner);
+    Owner save(Owner owner);
 
     Set<Owner> findAll();
 }

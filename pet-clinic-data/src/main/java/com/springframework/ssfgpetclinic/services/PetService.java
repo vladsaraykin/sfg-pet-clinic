@@ -8,7 +8,7 @@ public interface PetService {
 
     Pet findById(Long id);
 
-    Pet saver(Pet pet);
+    Pet save(Pet pet);
 
     Set<Pet> findAll();
 }
