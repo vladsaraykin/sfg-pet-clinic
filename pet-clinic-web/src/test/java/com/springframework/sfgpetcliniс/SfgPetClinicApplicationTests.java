@@ -1,9 +1,10 @@
-package sfgpetcliniс;
+package com.springframework.sfgpetcliniс;
 
+import com.springframework.sfgpetclinic.SfgPetClinicApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest(classes = SfgPetClinicApplication.class)
 class SfgPetClinicApplicationTests {
 
     @Test
