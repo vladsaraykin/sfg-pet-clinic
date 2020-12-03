@@ -1,4 +1,4 @@
-package com.springframework.ssfgpetclinic.model;
+package com.springframework.sfgpetclinic.model;
 
 public class Person extends BaseEntity {
 
