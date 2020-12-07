@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class OwnerMapServiceTest {
 
     OwnerMapService ownerMapService;
-    final Long ownerId = 1L;
-    final String lastName = "Smith";
+    final Long OWNER_ID = 1L;
+    final String LAST_NAME = "Smith";
 
     @BeforeEach
     void setUp() {
         ownerMapService = new OwnerMapService(new PetTypeMapService(), new PetMapService());
-        ownerMapService.save(Owner.builder().id(ownerId).lastName(lastName).build());
+        ownerMapService.save(Owner.builder().id(OWNER_ID).lastName(LAST_NAME).build());
     }
 
     @Test
@@ -29,9 +29,9 @@ class OwnerMapServiceTest {
 
     @Test
     void findById() {
-        final Owner owner = ownerMapService.findById(ownerId);
+        final Owner owner = ownerMapService.findById(OWNER_ID);
 
-        assertEquals(ownerId, owner.getId());
+        assertEquals(OWNER_ID, owner.getId());
     }
 
 
@@ -54,24 +54,24 @@ class OwnerMapServiceTest {
 
     @Test
     void deleteById() {
-        ownerMapService.deleteById(ownerId);
+        ownerMapService.deleteById(OWNER_ID);
 
         assertEquals(0, ownerMapService.findAll().size());
     }
 
     @Test
     void delete() {
-        ownerMapService.delete(ownerMapService.findById(ownerId));
+        ownerMapService.delete(ownerMapService.findById(OWNER_ID));
 
         assertEquals(0, ownerMapService.findAll().size());
     }
 
     @Test
     void findByLastName() {
-        final Owner owner = ownerMapService.findByLastName(lastName);
+        final Owner owner = ownerMapService.findByLastName(LAST_NAME);
 
         assertNotNull(owner);
-        assertEquals(ownerId, owner.getId());
+        assertEquals(OWNER_ID, owner.getId());
     }
 
     @Test
